@@ -1,0 +1,26 @@
+{
+  "name": "challenge02",
+  "version": "1.0.0",
+  "description": "Learn about the basic of ExpressJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoanganhIUH/Challenge02.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "HoangAnh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoanganhIUH/Challenge02/issues"
+  },
+  "homepage": "https://github.com/HoanganhIUH/Challenge02#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
