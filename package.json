@@ -2,8 +2,9 @@
   "name": "challenge02",
   "version": "1.0.0",
   "description": "Learn about the basic of ExpressJs",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
