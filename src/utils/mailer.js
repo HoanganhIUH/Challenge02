@@ -9,6 +9,10 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.sendOTP = async (to, otp) => {
+  if (!to || typeof to !== 'string' || !to.includes('@')) {
+    throw new Error("Không tìm thấy email hợp lệ của người dùng.");
+  }
+
   await transporter.sendMail({
     from: `"Your App" <${process.env.EMAIL_USER}>`,
     to,
@@ -16,3 +20,4 @@ exports.sendOTP = async (to, otp) => {
     html: `<p>Mã OTP của bạn là: <b>${otp}</b></p>`,
   });
 };
+

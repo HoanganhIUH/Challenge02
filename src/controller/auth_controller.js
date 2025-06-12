@@ -7,6 +7,12 @@ require("dotenv").config();
 exports.register = async (req, res) => {
   const { name, email, password } = req.body;
   try {
+    // ✅ Kiểm tra email đã tồn tại chưa
+    const existingUser = await pool.query(`SELECT * FROM users WHERE email = $1`, [email]);
+    if (existingUser.rows.length > 0) {
+      return res.status(400).json({ error: "Tài khoản với email này đã tồn tại" });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
     const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 phút
